@@ -72,6 +72,17 @@ function AgeCalculator() {
         return endings[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[Math.min(number % 10, 5)]];
     };
 
+    const toggleTheme = () => {
+        document.body.classList.toggle('dark-theme');
+    };
+
+    const shareAge = () => {
+        const ageText = document.getElementById('result').innerText;
+        navigator.clipboard.writeText(ageText).then(() => {
+            alert('Возраст скопирован в буфер обмена');
+        });
+    };
+
     return (
         <div className="container">
             <div className="calculator">
@@ -82,10 +93,15 @@ function AgeCalculator() {
                         value={date} 
                         onChange={(e) => setDate(e.target.value)} 
                         max={maxDate}
+                        className="input"
                     />
-                    <button onClick={calculateAge}>Узнать</button>
+                    <button onClick={calculateAge} className="button">Узнать</button>
                 </div>
                 <p id="result" dangerouslySetInnerHTML={{ __html: result }}></p>
+                <div className="settings">
+                    <button onClick={toggleTheme} className="button">Темная тема</button>
+                    <button onClick={shareAge} className="button">Поделиться</button>
+                </div>
             </div>
         </div>
     );

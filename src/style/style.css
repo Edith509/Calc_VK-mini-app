@@ -1,90 +1,98 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-}
-
-
-
-.container {
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
     display: flex;
     justify-content: center;
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #c4dfe6, #07575b);
-    color: #fff;
-    padding: 10px;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-.calculator {
-    width: 100%;
-    max-width: 600px;
-    margin-top: 100px;
+.container {
+    text-align: center;
+    background: var(--container-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
 }
 
-.calculator h1 {
-    font-size: 50px;
-    color: #07575b;
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
 }
-
 
 .input-box {
-    margin: 40px 0;
-    padding: 35px;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.3);
+    margin-bottom: 20px;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-.input-box input {
-    flex: 1;
-    margin-right: 20px;
-    padding: 14px 20px;
-    border: 0;
-    outline: 0;
-    font-size: 18px;
+.input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--input-border);
     border-radius: 5px;
-    position: relative;
+    width: 70%;
 }
 
-.input-box button {
-    background: #66a5ad;
-    border: 0;
-    outline: 0;
-    padding: 15px 30px;
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
     border-radius: 5px;
-    font-weight: 600;
-    font-size: 15px;
-    color: #333;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.input-box input::-webkit-calendar-picker-indicator {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: auto;
-    height: auto;
-    position: absolute;
-    background-position: calc(100% - 10px);
-    background-size: 30px;
-    cursor: pointer;
+.button:hover {
+    background-color: var(--button-hover-bg);
 }
 
-#result {
-    font-size: 20px;
+.result {
+    margin-top: 20px;
+    font-size: 1.2em;
 }
 
-#result span {
-    color: #ffff76
+.settings {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --container-bg: #fff;
+    --primary-color: #007BFF;
+    --input-border: #ccc;
+    --button-bg: #007BFF;
+    --button-text: #fff;
+    --button-hover-bg: #0056b3;
+}
+
+body.dark-theme {
+    --bg-color: #333;
+    --text-color: #f0f0f0;
+    --container-bg: #444;
+    --primary-color: #66b2ff;
+    --input-border: #555;
+    --button-bg: #66b2ff;
+    --button-text: #333;
+    --button-hover-bg: #3399ff;
 }
 
 
-@media screen and (max-width: 600px) {
+
+/* @media screen and (max-width: 600px) {
     .container {
         display: flex;
         justify-content: center;
@@ -209,4 +217,4 @@
         cursor: pointer;
     }
     
-}
+} */
